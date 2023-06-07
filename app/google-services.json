@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "339619648095",
+    "project_id": "menuapp-34216",
+    "storage_bucket": "menuapp-34216.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339619648095:android:511608702e7e2a054ac1ea",
+        "android_client_info": {
+          "package_name": "com.mirko.menuapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "339619648095-a0hi63pksnd72p1aema6u4hoqp8cgqiq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAouid7u38Ewra_aYOj5b87J8TNAA1JWA8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "339619648095-a0hi63pksnd72p1aema6u4hoqp8cgqiq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

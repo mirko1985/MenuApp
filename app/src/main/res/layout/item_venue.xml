@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="venueInfo"
+            type="com.mirko.menuapp.viewmodels.DirectoryViewModel.VenueInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha='@{venueInfo.info == "closed" ? 0.4f : 1.0f}'
+        android:paddingTop="@dimen/main_layout_padding"
+        android:paddingBottom="@dimen/main_layout_padding">
+
+        <TextView
+            android:id="@+id/tvVenueName"
+            style="@style/HeadlineStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:gravity="center_vertical|start"
+            android:text="@{venueInfo.name}"
+            app:layout_constraintBottom_toTopOf="@id/tvDistanceToVenue"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="MenuApp" />
+
+        <TextView
+            android:id="@+id/tvDistanceToVenue"
+            style="@style/SubtitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|start"
+            android:text="@{venueInfo.distance}"
+            app:layout_constraintBottom_toTopOf="@id/tvVenueAddress"
+            app:layout_constraintTop_toBottomOf="@id/tvVenueName"
+            tools:text="MenuApp" />
+
+        <TextView
+            android:id="@+id/tvVenueAddress"
+            style="@style/HintStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|start"
+            android:text="@{venueInfo.address}"
+            app:layout_constraintBottom_toTopOf="@id/tvInfo"
+            app:layout_constraintTop_toBottomOf="@id/tvDistanceToVenue"
+            tools:text="MenuApp" />
+
+        <TextView
+            android:id="@+id/tvInfo"
+            style="@style/HintStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|start"
+            android:text="@{venueInfo.info}"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvVenueAddress"
+            tools:text="MenuApp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

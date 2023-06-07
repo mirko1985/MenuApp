@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="venueDetails"
+            type="com.mirko.menuapp.viewmodels.DirectoryViewModel.VenueDetails" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.VenueDetailsFragment">
+
+        <ImageView
+            android:id="@+id/ivVenueThumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@{venueDetails.image}"
+            app:layout_constraintBottom_toTopOf="@id/clVenueInfo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@color/menu_orange" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clVenueInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/main_layout_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivVenueThumbnail">
+
+            <TextView
+                android:id="@+id/tvVenueName"
+                style="@style/HeadlineStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:gravity="center_vertical|start"
+                android:text="@{venueDetails.name}"
+                app:layout_constraintBottom_toTopOf="@id/tvDistanceToVenue"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="MenuApp" />
+
+            <TextView
+                android:id="@+id/tvDistanceToVenue"
+                style="@style/SubtitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:text="@{venueDetails.description}"
+                app:layout_constraintBottom_toTopOf="@id/tvVenueAddress"
+                app:layout_constraintTop_toBottomOf="@id/tvVenueName"
+                tools:text="MenuApp" />
+
+            <TextView
+                android:id="@+id/tvVenueAddress"
+                style="@style/HintStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:text="@{venueDetails.is_open}"
+                app:layout_constraintBottom_toTopOf="@id/tvInfo"
+                app:layout_constraintTop_toBottomOf="@id/tvDistanceToVenue"
+                tools:text="MenuApp" />
+
+            <TextView
+                android:id="@+id/tvInfo"
+                style="@style/HintStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:text="@{venueDetails.welcome_message}"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvVenueAddress"
+                tools:text="MenuApp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btLogout"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_layout_padding"
+            android:backgroundTint="@color/white"
+            android:text="@string/logout"
+            android:textColor="@color/black"
+            app:cornerRadius="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/black_80" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
